@@ -148,16 +148,12 @@ setInterval(() => {
 
 const music = document.getElementById("bg-music");
 
-// Try autoplay on load
+// Try autoplay
 window.addEventListener("load", () => {
-    music.play().catch(() => {
-        console.log("Autoplay blocked, waiting for user interaction");
-    });
+    music.play().catch(() => {});
 });
 
-// Play on first user interaction (fix for mobile)
-document.addEventListener("click", () => {
+// Force play on first tap (mobile fix)
+document.addEventListener("touchstart", () => {
     music.play();
-}, { once: true });        
-
-
+}, { once: true });
