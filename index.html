@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahees & Fidha | Wedding Invitation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<audio id="bg-music" loop>
+    <source src="nasheed.mp3" type="audio/mpeg">
+</audio>
+    <div id="preloader">
+        <div class="bismillah-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+        <!-- <div class="typewriter-text" id="typewriter">Bismillahir Rahmanir Raheem</div> -->
+    </div>
+
+    <canvas id="petal-canvas"></canvas>
+
+    <header class="hero">
+        <div class="hero-content reveal">
+            <h1 class="hero-names">Rahees & Fidha</h1>
+            <p class="hero-subtitle">We Are Getting Married</p>
+            <!-- <button id="music-toggle">🔊</button> -->
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </header>
+<section class="countdown-section reveal">
+    <h2>Countdown to Our Special Day</h2>
+    <div id="countdown">
+        <div><span id="days"></span><small>Days</small></div>
+        <div><span id="hours"></span><small>Hours</small></div>
+        <div><span id="minutes"></span><small>Minutes</small></div>
+        <div><span id="seconds"></span><small>Seconds</small></div>
+    </div>
+</section>
+    <section class="quote-section reveal">
+        <h2 class="quote-text">"And We created you in pairs"</h2>
+        <span class="quote-ref text-dark" style="color: rgb(29, 26, 26);">- Quran 78:8 -</span>
+    </section>
+
+    <!-- <section class="couple-section reveal">
+        <div class="couple-text">
+            <h2>The Couple</h2>
+            <p>With the blessings of Allah and their families, Aisha and Safeer invite you to share in their joy as they embark on a new journey together. Two souls, woven together by fate, ready to start a beautiful chapter of love, respect, and companionship.</p>
+        </div>
+        <div class="couple-images">
+            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?q=80&w=800&auto=format&fit=crop" alt="Bride and Groom" class="couple-img img-1">
+            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?q=80&w=800&auto=format&fit=crop" alt="Rings" class="couple-img img-2">
+        </div>
+    </section> -->
+
+    <div class="events-section">
+        <div class="events-container reveal">
+            <h2>The Events</h2>
+            
+            <div class="event-details">
+                <h3>The Nikah & Ceremony</h3>
+                <p style="color: var(--gold); font-weight: bold;">March 28, 2026</p>
+                <p>Wasava Cliff House, Kannur</p>
+                <p style="font-size: 0.9rem; margin-top: 10px; font-style: italic;">Join us as we tie the knot and seek the blessings of the Almighty.</p>
+            </div>
+
+            <div class="event-details">
+                <h3>The Reception</h3>
+                <p style="color: var(--gold); font-weight: bold;">March 29, 2026</p>
+                <p>At the residences in Malappattam and Mattool</p>
+                <p style="font-size: 0.9rem; margin-top: 10px; font-style: italic;">Celebrate with us over a grand feast and joyous moments.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="gallery-section reveal">
+        <h2>Captured Moments</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1583939000140-630985223c71?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 1"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 2"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=800&auto=format&fit=crop" alt="Gallery Image 3"></div>
+        </div>
+    </section>
+<section class="gallery-section reveal">
+    <h2>Venue Location</h2>
+    
+    <!-- <p>Wasava Cliff House, Kannur</p> -->
+
+    <iframe 
+        src="https://maps.google.com/maps?q=kannur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        width="100%" height="300" style="border:0; border-radius:10px;">
+    </iframe>
+
+    <a href="https://maps.google.com/?q=kannur" target="_blank" class="map-btn">
+        Open in Google Maps
+    </a>
+</section>
+
+
+
+
+    <footer>
+        <h2 style="font-family: var(--font-script); font-size: 3rem; color: var(--gold);">We look forward to your presence</h2>
+        <button class="rsvp-btn">RSVP Now</button>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">Rahees & Fidha | 2026</p>
+    </footer>
+    <script src="java.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,433 @@
+
+        /* CSS Variables for Color Palette */
+        :root {
+            --emerald: #97A97C;
+            --emerald-dark: #B5C99A;
+            --gold: #fcfaf5;
+            --gold-light: #fffdf6;
+            --cream: #FDFBF7;
+            --text-dark: #333333;
+            
+            --font-serif: 'Playfair Display', serif;
+            --font-script: 'Great Vibes', cursive;
+            --font-sans: 'Lato', sans-serif;
+            --font-arabic: 'Amiri', serif;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--text-dark);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+            overscroll-behavior-y: none;
+        }
+
+        h1, h2, h3 { font-family: var(--font-serif); }
+        
+        /* 1. Pre-loader / Splash Screen */
+        #preloader {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            background-color: var(--emerald-dark);
+            color: var(--gold);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 1.5s ease, transform 1.5s ease;
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-5%);
+        }
+
+        .bismillah-arabic {
+            font-family: var(--font-arabic);
+            font-size: 3rem;
+            margin-bottom: 10px;
+            direction: rtl;
+            border-left: 2px solid var(--gold);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+        }
+
+        .typewriter-text {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            border-right: 2px solid var(--gold);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+        }
+
+        /* 2. Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Parallax Background */
+            background-image: linear-gradient(rgba(10, 46, 34, 0.4), rgba(10, 46, 34, 0.6)), url('Kerala-Muslim-Wedding-5-1200x800.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            color: var(--cream);
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero-names {
+            font-family: var(--font-script);
+            font-size: 6rem;
+            color: var(--gold);
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: var(--gold);
+            font-size: 2rem;
+            z-index: 2;
+        }
+
+        /* 3. Global Dynamic Effects & Canvas */
+        #petal-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Sections Layout */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 4. The Quote */
+        .quote-section {
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .quote-text {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--emerald);
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        .quote-ref {
+            display: block;
+            margin-top: 20px;
+            font-family: var(--font-sans);
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* The Couple */
+        .couple-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .couple-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .couple-text h2 {
+            font-size: 3rem;
+            color: var(--emerald);
+            margin-bottom: 20px;
+        }
+
+        .couple-text p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .couple-images {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            height: 500px;
+        }
+
+        .couple-img {
+            position: absolute;
+            width: 70%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .img-1 { top: 0; left: 0; z-index: 2; }
+        .img-2 { bottom: 0; right: 0; z-index: 1; }
+
+        /* The Events (Strictly Center-Aligned) */
+        .events-section {
+            text-align: center;
+            background-color: var(--emerald);
+            color: var(--cream);
+            padding: 100px 20px;
+            max-width: 100%;
+        }
+
+        .events-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .events-section h2 {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 50px;
+            font-family: var(--font-script);
+        }
+
+        .event-details {
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 40px;
+        }
+        
+        .event-details:last-child {
+            border-bottom: none;
+        }
+
+        .event-details h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .event-details p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        /* Gallery */
+        .gallery-section {
+            text-align: center;
+        }
+
+        .gallery-section h2 {
+            font-size: 3rem;
+            color: var(--emerald);
+            margin-bottom: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            height: 350px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Footer & RSVP */
+        footer {
+            background-color: var(--emerald-dark);
+            color: var(--cream);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .rsvp-btn {
+            background-color: var(--gold);
+            color: var(--emerald-dark);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-family: var(--font-serif);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .rsvp-btn:hover {
+            background-color: var(--gold-light);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-names { font-size: 4rem; }
+            .couple-images { height: 400px; margin-top: 30px; }
+            .quote-text { font-size: 1.8rem; }
+        }
+
+
+/*newly added css  */      
+
+.countdown-section {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+#countdown div {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px 30px;
+    border-radius: 10px;
+    min-width: 90px;
+}
+
+#countdown span {
+    font-size: 2.5rem;
+    font-family: var(--font-serif);
+    display: block;
+}
+
+#countdown small {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+
+
+.quran-section {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.quran-section .arabic {
+    font-family: var(--font-arabic);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.quran-section .translation {
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+
+.location-section {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.map-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: var(--emerald);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+section {
+    padding: 120px 20px;
+}
+
+h2 {
+    letter-spacing: 1px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+    
+
+
+#music-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+}
