@@ -431,3 +431,111 @@ body {
     z-index: 999;
     backdrop-filter: blur(10px);
 }
+
+
+/* ===============================
+   MOBILE RESPONSIVE IMPROVEMENTS
+   =============================== */
+
+@media (max-width: 768px) {
+
+    /* HERO */
+    .hero {
+        background-attachment: scroll; /* Fix parallax bug on mobile */
+        padding: 0 15px;
+    }
+
+    .hero-names {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    /* COUNTDOWN */
+    #countdown {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    #countdown div {
+        min-width: 70px;
+        padding: 15px;
+    }
+
+    #countdown span {
+        font-size: 1.8rem;
+    }
+
+    /* EVENTS */
+    .events-section {
+        padding: 60px 15px;
+    }
+
+    .events-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .event-details h3 {
+        font-size: 1.5rem;
+    }
+
+    .event-details p {
+        font-size: 1rem;
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 250px;
+    }
+
+    /* MAP */
+    iframe {
+        height: 250px;
+    }
+
+    /* FOOTER */
+    footer h2 {
+        font-size: 2rem !important;
+    }
+
+    .rsvp-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    /* GENERAL SPACING */
+    section {
+        padding: 70px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero-names {
+        font-size: 2.5rem;
+    }
+
+    .quote-text {
+        font-size: 1.5rem;
+    }
+
+    #countdown span {
+        font-size: 1.5rem;
+    }
+
+    #countdown small {
+        font-size: 0.7rem;
+    }
+
+}
+
+
